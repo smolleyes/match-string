@@ -9,15 +9,15 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "keywords": ["string", "insensitive", "regexp", "javascript"],
+  "keywords": ["string", "insensitive", "accent", "regexp", "javascript"],
   "author": "jérôme Queyrou <jerome.queyrou@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "commitizen": "2.9.6",
-    "cz-conventional-changelog": "2.1.0",
-    "ghooks": "2.0.2",
+    "cz-conventional-changelog": "^2.0.0",
+    "ghooks": "^2.0.0",
     "jest": "21.2.1",
-    "semantic-release": "8.2.0"
+    "semantic-release": "^7.0.2"
   },
   "repository": {
     "type": "git",
