@@ -1,0 +1,20 @@
+{
+  "name": "find-string-insensitive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "keywords": ["string", "insensitive", "regexp", "javascript"],
+  "author": "jérôme Queyrou <jerome.queyrou@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.1.0",
+    "ghooks": "2.0.2",
+    "jest": "21.2.1",
+    "semantic-release": "8.2.0"
+  }
+}
