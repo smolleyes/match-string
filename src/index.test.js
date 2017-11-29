@@ -1,4 +1,4 @@
-var fn = require("./index.js");
+var fn = require("../index.js");
 
 describe("findString", () => {
   describe("retrun value test", () => {

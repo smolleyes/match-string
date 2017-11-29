@@ -28,4 +28,4 @@ const convert = accentInsensitive(convertAccentMap(defaultAccentMap));
 
 const findString = (text = "", flag = "gi") => new RegExp(convert(text), flag);
 
-export default findString;
+module.exports = findString;
