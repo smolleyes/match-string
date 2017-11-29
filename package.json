@@ -7,7 +7,7 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "npm publish"
   },
   "keywords": ["string", "insensitive", "accent", "regexp", "javascript"],
   "author": "jérôme Queyrou <jerome.queyrou@gmail.com>",
