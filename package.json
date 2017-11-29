@@ -1,11 +1,13 @@
 {
-  "name": "find-string-insensitive",
+  "name": "match-string",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": ["string", "insensitive", "regexp", "javascript"],
   "author": "jérôme Queyrou <jerome.queyrou@gmail.com>",
@@ -16,5 +18,17 @@
     "ghooks": "2.0.2",
     "jest": "21.2.1",
     "semantic-release": "8.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeromequeyrou/match-string.git"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test"
+    }
   }
 }
