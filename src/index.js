@@ -1,9 +1,9 @@
 const defaultAccentMap = ["aàáâãäå", "cç", "eèéêë", "iìíîï", "nñ", "oòóôõöø", "sß", "uùúûü", "yÿ"];
 
 const convertAccentMap = function(letters) {
-  let map = {};
+  var map = {};
   letters.map(elem => {
-    let letter = `[${elem}]`,
+    var letter = `[${elem}]`,
       chars = letter.split("");
     while (chars.length > 0) {
       map[chars.shift()] = letter;
@@ -18,7 +18,7 @@ accentInsensitive = accentMap => text => {
   if (!text) return textFold;
   text = text.toLowerCase();
   for (var idx = 0; idx < text.length; idx++) {
-    let charAt = text.charAt(idx);
+    var charAt = text.charAt(idx);
     textFold += accentMap[charAt] || charAt;
   }
   return textFold;
