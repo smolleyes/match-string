@@ -1,6 +1,6 @@
 const defaultAccentMap = ["aàáâãäå", "cç", "eèéêë", "iìíîï", "nñ", "oòóôõöø", "sß", "uùúûü", "yÿ"];
 
-const convertAccentMap = function(letters) {
+const convertAccentMap = letters => {
   var map = {};
   letters.map(elem => {
     var letter = `[${elem}]`,
@@ -12,7 +12,7 @@ const convertAccentMap = function(letters) {
   return map;
 };
 
-accentInsensitive = accentMap => text => {
+const accentInsensitive = accentMap => text => {
   var textFold = "";
 
   if (!text) return textFold;
@@ -24,7 +24,8 @@ accentInsensitive = accentMap => text => {
   return textFold;
 };
 
-convert = accentInsensitive(convertAccentMap(defaultAccentMap));
+const convert = accentInsensitive(convertAccentMap(defaultAccentMap));
 
 const findString = (text = "", flag = "gi") => new RegExp(convert(text), flag);
-module.exports = findString;
+
+export default findString;

@@ -21,7 +21,7 @@ import m from "match-string";
 ### ES5
 
 ```javascript
-var m = require("match-string");
+var m = require("match-string").default;
 ```
 
 ### Syntaxe
