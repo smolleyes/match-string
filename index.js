@@ -1,1 +1,36 @@
-"use strict";var defaultAccentMap=["aàáâãäå","cç","eèéêë","iìíîï","nñ","oòóôõöø","sß","uùúûü","yÿ"],convertAccentMap=function(n){var t={};return n.map(function(n){for(var e="["+n+"]",r=e.split("");r.length>0;)t[r.shift()]=e}),t},accentInsensitive=function(n){return function(t){var e="";if(!t)return e;t=t.toLowerCase();for(var r=0;r<t.length;r++){var c=t.charAt(r);e+=n[c]||c}return e}},convert=accentInsensitive(convertAccentMap(defaultAccentMap)),findString=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"gi";return new RegExp(convert(n),t)};module.exports=findString;
+const defaultAccentMap = ["aàáâãäå", "cç", "eèéêë", "iìíîï", "nñ", "oòóôõöø", "sß", "uùúûü", "yÿ"];
+
+const convertAccentMap = letters => {
+  var map = {};
+  letters.map(elem => {
+    var letter = `[${elem}]`,
+      chars = letter.split("");
+    while (chars.length > 0) {
+      map[chars.shift()] = letter;
+    }
+  });
+  return map;
+};
+
+const accentInsensitive = accentMap => text => {
+  var textFold = "";
+
+  if (!text) return textFold;
+  text = text.toLowerCase();
+  for (var idx = 0; idx < text.length; idx++) {
+    var charAt = text.charAt(idx);
+    textFold += accentMap[charAt] || charAt;
+  }
+  return textFold;
+};
+
+const convert = accentInsensitive(convertAccentMap(defaultAccentMap));
+
+const findString = (text = "", flag = "gi") => {
+    let regex = new RegExp(convert(text), flag);
+    const result = regex.toString().replace(/\//,"(?i)").replace(/\/gi/,'').replace(/\s+/,'|');
+    console.log(result)
+    return result;
+}
+
+module.exports = findString;
