@@ -29,7 +29,6 @@ const convert = accentInsensitive(convertAccentMap(defaultAccentMap));
 const findString = (text = "", flag = "gi") => {
     let regex = new RegExp(convert(text), flag);
     const result = regex.toString().replace(/\//,"(?i)").replace(/\/gi/,'').replace(/\s+/,'|');
-    console.log(result)
     return result;
 }
 
